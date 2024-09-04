@@ -1,35 +1,27 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+const Flag = props => {
+  console.log(props);
+  return (
+    <div>
+      <h2>{props.country}</h2>
+      <img
+        src={`/assets/images/${props.image}`}
+        alt={`Bandera ${props.country}`}
+        width='200px'
+      ></img>
+    </div>
+  );
+};
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Curso de React</h1>
+      <Flag country='Canadá' image='canada.svg' />
+      <Flag country='México' image='mexico.svg' />
+      <Flag country='Francia' image='france.svg' />
+      <Flag country='España' image='spain.svg' />
     </>
   );
-}
+};
 
 export default App;
